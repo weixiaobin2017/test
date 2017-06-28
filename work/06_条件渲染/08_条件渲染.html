@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08_条件渲染</title>
+</head>
+<body>
+<!--
+切换一个元素:
+  v-
+  v-else
+  v-showif
+切换多个元素
+  <template v-if="ok">  //不能用v-show
+注意:
+  如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好
+-->
+
+<div id="demo">
+  <h1>测试: 切换一个元素</h1>
+
+    <p v-if="ok">你爱我</p>
+    <p v-else>我爱你</p>
+  <p v-show="ok">你爱我</p>
+
+  <h1>测试: 切换多个元素</h1>
+  <template v-if="ok">
+    <h2>xxxxxxxxxx</h2>
+    <h2>xxxxxxxxxx</h2>
+    <h2>xxxxxxxxxx</h2>
+    <h2>xxxxxxxxxx</h2>
+  </template>
+<button @click="ok=!ok">qiehuan</button>
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+      el : "#demo",
+      data : {
+          ok : false
+      }
+  })
+</script>
+</body>
+</html>
